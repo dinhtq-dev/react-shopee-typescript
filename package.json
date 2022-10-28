@@ -21,11 +21,6 @@
     "lint:ts": "eslint . --ext .ts,.tsx,.cjs,.mjs --ignore-path .gitignore --ignore-path .eslintignore",
     "lint:ts:fix": "eslint . --ext .ts,.tsx,.cjs,.mjs --fix --ignore-path .gitignore --ignore-path .eslintignore"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -42,16 +37,18 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
     "typescript": "^4.4.2"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{ts,tsx}": [
       "yarn lint:ts:fix",
-      "prettier --write ."
-    ]
+      "prettier --write .",
+      "git add"
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "browserslist": {
     "production": [

@@ -1,5 +1,5 @@
 import React from 'react';
-console.log('sdf');
 export const App = () => {
+  console.log('234');
   return <div>Hell 123</div>;
 };
