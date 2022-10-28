@@ -47,7 +47,9 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "yarn lint:js:fix"
+      "yarn lint:ts:fix",
+      "prettier --write .",
+      "git add ."
     ],
     "*.{json,js,ts,jsx,tsx,html}": [
       "prettier --write"
