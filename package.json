@@ -15,6 +15,8 @@
     "test:ci": "CI=true react-scripts test",
     "eject": "react-scripts eject",
     "lint": "yarn lint:ts",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
     "lint-fix": "yarn lint:ts:fix",
     "lint:ts": "eslint . --ext .ts,.tsx,.cjs,.mjs --ignore-path .gitignore --ignore-path .eslintignore",
     "lint:ts:fix": "eslint . --ext .ts,.tsx,.cjs,.mjs --fix --ignore-path .gitignore --ignore-path .eslintignore"
@@ -48,11 +50,7 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "yarn lint:ts:fix",
-      "prettier --write .",
-      "git add ."
-    ],
-    "*.{json,js,ts,jsx,tsx,html}": [
-      "prettier --write"
+      "prettier --write ."
     ]
   },
   "browserslist": {
